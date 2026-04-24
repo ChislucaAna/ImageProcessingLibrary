@@ -6,9 +6,7 @@
 #define IMAGEPROCESSINGLIBRARY_IMAGE_H
 
 
-class Image
-
-{
+class Image{
 
 public:
     Image();
