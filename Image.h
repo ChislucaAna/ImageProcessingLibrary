@@ -5,6 +5,13 @@
 #ifndef IMAGEPROCESSINGLIBRARY_IMAGE_H
 #define IMAGEPROCESSINGLIBRARY_IMAGE_H
 
+#include <iostream>
+#include <string>
+#include<fstream>
+
+#include "Point.h"
+#include "Size.h"
+#include "Rectangle.h"
 
 class Image{
 
