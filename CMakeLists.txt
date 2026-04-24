@@ -11,4 +11,9 @@ add_executable(ImageProcessingLibrary main.cpp
         Rectangle.cpp
         Rectangle.h
         Image.cpp
-        Image.h)
+        Image.h
+        ImageProcessing.cpp
+        ImageProcessing.h
+        BrightnessAndContrast.cpp
+        BrightnessAndContrast.h
+)

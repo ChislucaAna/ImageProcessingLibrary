@@ -149,7 +149,7 @@ Image Image::ones(unsigned int width, unsigned int height) {
     return img;
 }
 
-unsigned char& Image::at(unsigned int x, unsigned int y) {
+unsigned char& Image::at(unsigned int x, unsigned int y) const{
     return this->m_data[y][x];
 }
 
