@@ -16,4 +16,6 @@ add_executable(ImageProcessingLibrary main.cpp
         ImageProcessing.h
         BrightnessAndContrast.cpp
         BrightnessAndContrast.h
+        GammaCorrection.cpp
+        GammaCorrection.h
 )
