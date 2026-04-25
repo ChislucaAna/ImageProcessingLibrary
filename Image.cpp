@@ -76,21 +76,20 @@ Image& Image::operator=(const Image &other) {
     return *this;
 }
 
-/*
-Think of it like a parking garage:
-  - You allocated spots for 10 cars (the array of pointers)
-  - You allocated a garage for each car (each row)
-  - You must empty each garage first, then remove the spots
-  */
-Image::~Image() {
-    if (this->m_data != nullptr) {
-        //go row by row to delete the constents of the row
+void Image::release() {
+    if (m_data != nullptr) {
         for (unsigned int i = 0; i < m_height; i++) {
-            delete[] this->m_data[i];
+            delete[] m_data[i];
         }
-        //then detele the big structure
-        delete[] this->m_data;
+        delete[] m_data;
+        m_data = nullptr;
+        m_width = 0;
+        m_height = 0;
     }
+}
+
+Image::~Image() {
+    release();
 }
 
 unsigned int Image::width() const {
@@ -273,8 +272,9 @@ std::istream& operator>>(std::istream& is, Image& dt) {
     std::string magic;
     is >> magic;
 
-    // Skip comments (lines starting with #)
+    // Consume the rest of the magic-number line, then skip comment lines
     std::string line;
+    std::getline(is, line);
     while (is.peek() == '#') {
         std::getline(is, line);
     }

@@ -18,4 +18,7 @@ add_executable(ImageProcessingLibrary main.cpp
         BrightnessAndContrast.h
         GammaCorrection.cpp
         GammaCorrection.h
+        ImageConvolution.cpp
+        ImageConvolution.h
+        ShapeDrawing.cpp
 )
